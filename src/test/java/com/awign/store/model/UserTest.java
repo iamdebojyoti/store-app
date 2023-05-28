@@ -5,61 +5,61 @@ import org.junit.jupiter.api.Test;
 import java.time.LocalDateTime;
 
 import static com.awign.store.type.UserType.*;
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.*;
 
 class UserTest {
 
     @Test
     void shouldReturnTrueIfUserIsEmployee() {
-        User user = new User("abc", EMPLOYEE, LocalDateTime.now());
+        User user = new User("USER001", "abc", EMPLOYEE, LocalDateTime.now());
 
         boolean isEmployee = user.isEmployee();
 
-        assertEquals(isEmployee, true);
+        assertTrue(isEmployee);
     }
 
     @Test
     void shouldReturnFalseIfUserIsNotEmployee() {
-        User user = new User("abc", OTHERS, LocalDateTime.now());
+        User user = new User("USER001", "abc", OTHERS, LocalDateTime.now());
 
         boolean isEmployee = user.isEmployee();
 
-        assertEquals(isEmployee, false);
+        assertFalse(isEmployee);
     }
 
     @Test
     void shouldReturnTrueIfUserIsAffiliate() {
-        User user = new User("abc", AFFILIATE, LocalDateTime.now());
+        User user = new User("USER001", "abc", AFFILIATE, LocalDateTime.now());
 
         boolean isAffiliate = user.isAffiliate();
 
-        assertEquals(isAffiliate, true);
+        assertTrue(isAffiliate);
     }
 
     @Test
     void shouldReturnFalseIfUserIsNotAffiliate() {
-        User user = new User("abc", EMPLOYEE, LocalDateTime.now());
+        User user = new User("USER001", "abc", EMPLOYEE, LocalDateTime.now());
 
         boolean isAffiliate = user.isAffiliate();
 
-        assertEquals(isAffiliate, false);
+        assertFalse(isAffiliate);
     }
 
     @Test
     void shouldReturnTrueIfUserIsHasJoined2YearsBack() {
-        User user = new User("abc", AFFILIATE, LocalDateTime.of(2020, 3,10, 5, 6));
+        User user = new User("USER001", "abc", AFFILIATE, LocalDateTime.of(2020, 3, 10, 5, 6));
 
         boolean hasJoined2YearsBack = user.hasJoinedBack(2);
 
-        assertEquals(hasJoined2YearsBack, true);
+        assertTrue(hasJoined2YearsBack);
     }
 
     @Test
     void shouldReturnFalseIfUserIsHasNotJoined2YearsBack() {
-        User user = new User("abc", AFFILIATE, LocalDateTime.now());
+        User user = new User("USER001", "abc", AFFILIATE, LocalDateTime.now());
 
         boolean hasJoined2YearsBack = user.hasJoinedBack(2);
 
-        assertEquals(hasJoined2YearsBack, false);
+        assertTrue(hasJoined2YearsBack);
     }
 }

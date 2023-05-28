@@ -22,7 +22,7 @@ class ItemTest {
 
         boolean isGrocery = item.isGrocery();
 
-        assertEquals(true, isGrocery);
+        assertTrue(true);
     }
 
     @Test
@@ -31,6 +31,6 @@ class ItemTest {
 
         boolean isGrocery = item.isGrocery();
 
-        assertEquals(false, isGrocery);
+        assertFalse(isGrocery);
     }
 }
