@@ -1,7 +1,12 @@
 package com.awign.store.model;
 
+import com.awign.store.type.UserType;
+
 import java.time.LocalDateTime;
 import java.time.temporal.ChronoUnit;
+
+import static com.awign.store.type.UserType.AFFILIATE;
+import static com.awign.store.type.UserType.EMPLOYEE;
 
 public class User {
 
@@ -16,11 +21,11 @@ public class User {
     }
 
     public boolean isEmployee() {
-        return userType == UserType.EMPLOYEE;
+        return userType == EMPLOYEE;
     }
 
     public boolean isAffiliate() {
-        return userType == UserType.AFFILIATE;
+        return userType == AFFILIATE;
     }
 
     public boolean hasJoinedBack(int years) {
