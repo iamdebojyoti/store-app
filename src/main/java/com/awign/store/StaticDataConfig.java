@@ -30,6 +30,7 @@ public class StaticDataConfig {
         return discountMap;
     }
 
+    @Bean
     public List<User> users() {
         List<User> users = new ArrayList<>();
         users.add(new User("USER001", "user-1", UserType.EMPLOYEE, LocalDateTime.now()));

@@ -43,7 +43,7 @@ class ItemControllerTest {
     }
 
     @Test
-    void calculatePrice_UserExists_ReturnsOkResponseWithPrice() throws Exception {
+    void shouldCalculatePriceWhenUserExists() throws Exception {
         User user = new User("USER001", "abc", UserType.EMPLOYEE, LocalDateTime.now());
         Item item1 = new Item("potato", 2, 2.0, ItemType.GROCERY);
         Item item2 = new Item("onion", 2, 3.0, ItemType.GROCERY);
@@ -74,7 +74,7 @@ class ItemControllerTest {
     }
 
     @Test
-    void calculatePrice_UserDoesNotExist_ReturnsNotFoundResponse() throws Exception {
+    void shouldThrowErrorWhenUserIsNotFound() throws Exception {
         Item item1 = new Item("potator", 2, 2.0, ItemType.GROCERY);
         Item item2 = new Item("onion", 2, 3.0, ItemType.GROCERY);
         Item item3 = new Item("cabbage", 2, 1.3, ItemType.GROCERY);
