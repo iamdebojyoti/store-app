@@ -4,9 +4,9 @@ import com.awign.store.type.DiscountType;
 
 public class Discount {
 
-    private String name;
-    private double value;
-    private DiscountType type;
+    private final String name;
+    private final double value;
+    private final DiscountType type;
 
     public Discount(String name, double value, DiscountType type) {
         this.name = name;

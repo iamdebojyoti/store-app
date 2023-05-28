@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 @Service
 public class PricingService {
 
-    private DiscountFinder discountFinder;
+    private final DiscountFinder discountFinder;
 
     public PricingService(DiscountFinder discountFinder) {
         this.discountFinder = discountFinder;

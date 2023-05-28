@@ -1,5 +1,5 @@
 package com.awign.store.type;
 
 public enum UserType {
-    EMPLOYEE, AFFILIATE, OTHERS;
+    EMPLOYEE, AFFILIATE, OTHERS
 }

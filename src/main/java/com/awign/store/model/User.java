@@ -10,10 +10,10 @@ import static com.awign.store.type.UserType.EMPLOYEE;
 
 public class User {
 
-    private String userId;
-    private String name;
-    private UserType userType;
-    private LocalDateTime joiningDate;
+    private final String userId;
+    private final String name;
+    private final UserType userType;
+    private final LocalDateTime joiningDate;
 
     public User(String userId, String name, UserType userType, LocalDateTime joiningDate) {
         this.userId = userId;

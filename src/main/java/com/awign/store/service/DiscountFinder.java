@@ -9,7 +9,7 @@ import java.util.Map;
 @Component
 public class DiscountFinder {
 
-    private Map<String, Discount> discountMap;
+    private final Map<String, Discount> discountMap;
 
     public DiscountFinder(Map<String, Discount> discountMap) {
         this.discountMap = discountMap;
