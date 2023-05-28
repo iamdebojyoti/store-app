@@ -4,6 +4,7 @@ import com.awign.store.type.UserType;
 
 import java.time.LocalDateTime;
 import java.time.temporal.ChronoUnit;
+import java.util.Objects;
 
 import static com.awign.store.type.UserType.AFFILIATE;
 import static com.awign.store.type.UserType.EMPLOYEE;
@@ -22,6 +23,10 @@ public class User {
         this.joiningDate = joiningDate;
     }
 
+    public String getUserId() {
+        return userId;
+    }
+
     public boolean isEmployee() {
         return userType == EMPLOYEE;
     }
@@ -33,5 +38,18 @@ public class User {
     public boolean hasJoinedBack(int years) {
         long timeSpent = ChronoUnit.YEARS.between(joiningDate, LocalDateTime.now());
         return timeSpent >= years;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        User user = (User) o;
+        return Objects.equals(userId, user.userId);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(userId);
     }
 }

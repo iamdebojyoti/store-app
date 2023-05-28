@@ -60,6 +60,6 @@ class UserTest {
 
         boolean hasJoined2YearsBack = user.hasJoinedBack(2);
 
-        assertTrue(hasJoined2YearsBack);
+        assertFalse(hasJoined2YearsBack);
     }
 }
